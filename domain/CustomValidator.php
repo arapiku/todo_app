@@ -15,7 +15,7 @@ class CustomValidator extends Validator
   */
   public function validateSpecial($attribute, $value, $parameters)
   {
-      if (!preg_match('|[<>&$%#"\'()!?*+-/_]|', $value)) {
+      if (!preg_match('/[^ぁ-んァ-ンーa-zA-Z0-9一-龠０-９\-\r]+/u', $value)) {
           return true;
       }
 

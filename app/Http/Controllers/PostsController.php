@@ -19,7 +19,8 @@ class PostsController extends Controller
     $todo->posts()->save($post);
 
     return redirect()
-           ->action('TodosController@show', $todo->id);
+           ->action('TodosController@show', $todo->id)
+           ->with('flash_message', 'Todoを追加しました！');
   }
 
   public function update(Request $request, $id) {

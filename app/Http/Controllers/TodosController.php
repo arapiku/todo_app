@@ -17,7 +17,7 @@ class TodosController extends Controller
       $todo = new Todo();
       $todo->title = $request->title;
       $todo->save();
-      return redirect('/')->with('flash_message', 'Todoを追加しました！');
+      return redirect('/')->with('flash_message', 'Todoリストを追加しました！');
     }
 
     public function show($id) {
@@ -28,6 +28,6 @@ class TodosController extends Controller
     public function destroy($id) {
       $todo = Todo::findOrFail($id);
       $todo->delete();
-      return redirect('/')->with('flash_message', 'Todoを削除しました！');
+      return redirect('/')->with('flash_message', 'Todoリストを削除しました！');
     }
 }
